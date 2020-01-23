@@ -5,13 +5,14 @@
 int main(int argc , char *argv[]) {
 	FILE *OutFile;
 	unsigned long count;
+	unsigned char c = 0;
 
 	OutFile = fopen("TestFile.bin","w");
 	if (OutFile){
 		printf("writing file\n");
-		for (count = 0; count < 0x6000000; count++)
+		for (count = 0; count < 1500000000; count++)
 		{
-			fputc(0x00,OutFile);
+			fputc(c++,OutFile);
 		}
 		fclose(OutFile);
 	}
